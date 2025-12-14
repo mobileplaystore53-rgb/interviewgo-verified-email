@@ -20,114 +20,64 @@
             justify-content: center;
             padding: 20px;
         }
-        .container {
-            max-width: 440px;
-            text-align: center;
-        }
-        .icon {
-            font-size: 80px;
-            margin-bottom: 24px;
-            animation: bounce 1s ease-in-out;
-        }
+        .container { max-width: 440px; text-align: center; }
+        .icon { font-size: 80px; margin-bottom: 24px; animation: bounce 1s ease-in-out; }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
         }
         h1 {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 32px; font-weight: 700;
             background: linear-gradient(135deg, #06B6D4, #8B5CF6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 16px;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 16px;
         }
-        .message {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 32px;
-            color: #94A3B8;
-        }
+        .message { font-size: 18px; line-height: 1.6; margin-bottom: 32px; color: #94A3B8; }
         .card {
             background: rgba(30, 41, 59, 0.8);
             border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 24px;
-            text-align: left;
+            border-radius: 16px; padding: 32px; margin-bottom: 24px; text-align: left;
         }
-        .card h3 {
-            color: #06B6D4;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        .step {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin-bottom: 16px;
-        }
+        .card h3 { color: #06B6D4; margin-bottom: 20px; font-size: 16px; }
+        .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
         .step:last-child { margin-bottom: 0; }
         .step-number {
-            width: 30px;
-            height: 30px;
+            width: 30px; height: 30px;
             background: linear-gradient(135deg, #06B6D4, #8B5CF6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: 700;
-            color: #0F172A;
-            flex-shrink: 0;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; color: #0F172A; flex-shrink: 0;
         }
-        .step-text {
-            font-size: 15px;
-            color: #E2E8F0;
-            line-height: 1.5;
-            padding-top: 4px;
-        }
+        .step-text { font-size: 15px; color: #E2E8F0; line-height: 1.5; padding-top: 4px; }
         .step-text strong { color: #06B6D4; }
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            display: inline-flex; align-items: center; gap: 8px;
             padding: 16px 36px;
             background: linear-gradient(135deg, #06B6D4, #0891B2);
-            color: #0F172A;
-            text-decoration: none;
-            border-radius: 14px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 8px;
+            color: #0F172A; text-decoration: none; border-radius: 14px;
+            font-weight: 600; font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px;
         }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.35);
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 13px;
-            color: #64748B;
-        }
-        .footer a {
-            color: #06B6D4;
-            text-decoration: none;
-        }
-        .footer a:hover { text-decoration: underline; }
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            color: #F1F5F9;
-        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(6, 182, 212, 0.35); }
+        .footer { margin-top: 40px; font-size: 13px; color: #64748B; }
+        .footer a { color: #06B6D4; text-decoration: none; }
+        .logo { font-size: 20px; font-weight: 700; margin-bottom: 32px; color: #F1F5F9; }
         .logo span {
             background: linear-gradient(135deg, #06B6D4, #8B5CF6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .opening-app {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px; padding: 16px; margin-bottom: 24px;
+            display: none;
+        }
+        .opening-app.show { display: block; }
+        .spinner {
+            width: 24px; height: 24px; border: 3px solid rgba(6, 182, 212, 0.3);
+            border-top-color: #06B6D4; border-radius: 50%;
+            animation: spin 1s linear infinite; display: inline-block; margin-right: 12px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
@@ -136,6 +86,12 @@
         
         <div class="icon">✅</div>
         <h1>Email Verified!</h1>
+        
+        <!-- Show while trying to open app -->
+        <div class="opening-app" id="openingApp">
+            <span class="spinner"></span>
+            <span style="color: #06B6D4;">Opening InterviewGo app...</span>
+        </div>
         
         <p class="message">
             Your email has been verified successfully.<br>
@@ -158,7 +114,11 @@
             </div>
         </div>
         
-        <a href="https://play.google.com/store/apps/details?id=in.interviewgo.android" class="btn">
+        <a href="interviewgo://auth/callback" class="btn" id="openAppBtn">
+            🚀 Open App
+        </a>
+        
+        <a href="https://play.google.com/store/apps/details?id=in.interviewgo.android" class="btn" style="background: rgba(30, 41, 59, 0.8); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.3);">
             📱 Download App
         </a>
         
@@ -168,11 +128,43 @@
                 <a href="https://play.google.com/store/apps/details?id=in.interviewgo.android">Get it on Google Play</a>
             </p>
             <p style="margin-top: 24px;">
-                <a href="index.html">Privacy Policy</a> • <a href="index.html">Terms of Service</a>
+                <a href="https://rohan5576.github.io/InterviewGo.Android/">Privacy Policy</a> • 
+                <a href="https://rohan5576.github.io/InterviewGo.Android/">Terms of Service</a>
             </p>
             <p style="margin-top: 16px;">© 2025 InterviewGo • Made with ❤️ in India 🇮🇳</p>
         </div>
     </div>
+
+    <script>
+        // Try to open the app automatically when page loads
+        window.onload = function() {
+            // Show "Opening app" message
+            document.getElementById('openingApp').classList.add('show');
+            
+            // Try to open the app via deep link
+            var appOpened = false;
+            var deepLink = 'interviewgo://auth/callback';
+            
+            // Create hidden iframe to try opening app
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = deepLink;
+            document.body.appendChild(iframe);
+            
+            // Also try window.location (works better on some devices)
+            setTimeout(function() {
+                window.location.href = deepLink;
+            }, 100);
+            
+            // If page is still visible after 2 seconds, app probably isn't installed
+            setTimeout(function() {
+                document.getElementById('openingApp').classList.remove('show');
+                // Remove the iframe
+                if (iframe.parentNode) {
+                    iframe.parentNode.removeChild(iframe);
+                }
+            }, 2500);
+        };
+    </script>
 </body>
 </html>
-
